@@ -25,15 +25,21 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
-
+    .map() - It returns a new array and can convert data. Needs a return statement.
+    .reduce() - It returns a single value and it's oftenly used for sums. Takes 2 parameters (accumulator, item), returns accumulator which also needs to be init (0).
+    .filter() - It returns a new array and filters data into the new array. It also returns condition which means that should return a boolean.
 2. Explain the difference between a callback and a higher order function.
-
+    Higher order function is the function that takes other function as an argument and returns a fuction to its caller.
+    Callback function is a function that is passed to another function with the expectation that the other function will call it.
 3. Explain what a closure is.
-
+    Closure is the combination of a function bundled together. Closure gives you access to an outer function’s scope from an inner function.
 4. Describe the four principles of the 'this' keyword.
-
+    Window binding - if none of the other rules apply, 'this defaukts to the window, unless you are in stric mode in which case it will return undefined.
+    Implicit binding - applies to objects with methods. When the function is invoked everything left of the dot refers to what 'this' refers to.
+    Explicit binding - explicitly pass in what we want 'this' to refer to using .call, .apply or .bind.
+    New Binding - when a function is invoked as a constructor function 'this' points to the newly created object.
 5. Why do we need super() in an extended class?
-
+    We need super() to acces the data of the parent class.
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions

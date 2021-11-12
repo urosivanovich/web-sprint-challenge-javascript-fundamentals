@@ -16,7 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-//Every nested function can access the variable outside 
+//  Nested function can access the variable internal because they both exist and belong to the same scope.
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
