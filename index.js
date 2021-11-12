@@ -33,7 +33,7 @@ function summation(num) {
  }
  return count;
 }
-console.log(summation(4));
+console.log('task 2', summation(4));
   
 
 
@@ -65,13 +65,13 @@ const zooAnimals = [
   function animalNames(arr){
     const displayNames = [];
     arr.forEach(function(item){
-      displayNames.push(item.animal_name)
-
+      displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)
+     
     });
     return displayNames;
   }
  
-  console.log(animalNames(zooAnimals));
+  console.log('task 3', animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -85,7 +85,7 @@ const zooAnimals = [
 return newArr
   }
 
-  console.log(lowerCaseNames(zooAnimals))
+  console.log('task 4', lowerCaseNames(zooAnimals))
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -101,7 +101,7 @@ return newArr
     });
       return newArr
   }
-  console.log(lowPopulationAnimals(zooAnimals))
+  console.log('task 5', lowPopulationAnimals(zooAnimals))
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -116,7 +116,7 @@ return newArr
     }, 0);
     return totalPop
   }
-  console.log(USApop(zooAnimals));
+  console.log('task 6', USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -138,7 +138,7 @@ function add(num1, num2){
     return num1 + num2
     }
   
-    console.log(consume(2, 2, add));
+    console.log('task 7', consume(2, 2, add));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
@@ -146,14 +146,14 @@ function multiply(num1,num2){
    return num1 * num2
   }
 
-  console.log(consume(10, 16, multiply));
+  console.log('task 8', consume(10, 16, multiply));
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
 function greeting(first, last){
    return `Hello ${first} ${last}, nice to meet you!`
   }
-  console.log(consume("Mary", "Poppins", greeting));
+  console.log('task 9', consume("Mary", "Poppins", greeting));
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
@@ -233,10 +233,17 @@ class CuboidMakerTwo{
     }
 }
 
+const cuboidTwo = new CuboidMakerTwo ({
+  length: 4,
+  width: 5,
+  height: 5,
+});
+
+
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
