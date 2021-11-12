@@ -16,9 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
-
-
+//Every nested function can access the variable outside 
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
@@ -67,7 +65,7 @@ const zooAnimals = [
   function animalNames(arr){
     const displayNames = [];
     arr.forEach(function(item){
-      displayNames.push(item.animal_name + ' ' + item.scientific_name)
+      displayNames.push(item.animal_name)
 
     });
     return displayNames;
@@ -103,7 +101,7 @@ return newArr
     });
       return newArr
   }
-  
+  console.log(lowPopulationAnimals(zooAnimals))
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -118,7 +116,7 @@ return newArr
     }, 0);
     return totalPop
   }
-  
+  console.log(USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -139,22 +137,23 @@ return newArr
 function add(num1, num2){
     return num1 + num2
     }
-  console.log(consume(2,5,add))
-
+  
+    console.log(consume(2, 2, add));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
 function multiply(num1,num2){
    return num1 * num2
   }
-  console.log(consume(2,5,multiply))
+
+  console.log(consume(10, 16, multiply));
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
 function greeting(first, last){
    return `Hello ${first} ${last}, nice to meet you!`
   }
-  console.log(consume('uros', 'ivanovic', greeting))
+  console.log(consume("Mary", "Poppins", greeting));
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
@@ -167,16 +166,22 @@ function greeting(first, last){
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(obj){
+  this.length = obj.length;
+  this.width = obj.width;
+  this.height = obj.height;
 }
+
 
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
 
+CuboidMaker.prototype.volume = function(){
+  return this.length * this.width * this.height
 
+}
 
 
 
@@ -186,15 +191,24 @@ function CuboidMaker(/*Your Code Here */){
   2 * (length * width + length * height + width * height)  */
 
 
-
+CuboidMaker.prototype.surfaceArea = function(){
+  return 2* (this.length * this.width + this.length * this.height + this.width * this.height)
+  
+}
 
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
+const cuboid = new CuboidMaker ({
+  length: 4,
+  width: 5,
+  height: 5,
+})
 
-
+console.log(cuboid.surfaceArea());
+console.log(cuboid.volume());
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
@@ -206,7 +220,17 @@ function CuboidMaker(/*Your Code Here */){
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+    constructor(obj){
+      this.length=obj.length;
+      this.width=obj.height;
+      this.height=obj.height;
+    }
+    volume(){
+      return  this.length * this.width * this.height
+    }
+    surfaceArea(){
+      return 2* (this.length * this.width + this.length * this.height + this.width * this.height)
+    }
 }
 
 
